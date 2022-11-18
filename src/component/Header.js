@@ -38,7 +38,7 @@ const Header = () => {
                 <div className='flex justify-end md:hidden'>
                     <FaBars className='text-white text-3xl cursor-pointer' onClick={handleMobileMenu} />
                 </div>
-                <div className={mobileMenu ? "block" : "hidden" }>
+                <div className={mobileMenu ? "block" : "hidden md:block" }>
                     <ul className="md:items-center justify-end gap-4 flex flex-col md:flex-row pt-5 md:pt-0 pl-3 md:pl-0">
                         <li>
                             <Link className='text-primary text-base font-jost font-medium hover:text-primary transition-all ' to="/">Home</Link>

@@ -11,7 +11,9 @@ import Contact from '../component/Contact'
 import Footer from '../component/Footer'
 
 
+
 const Home = () => {
+
   return (
     <>
         <Header/>

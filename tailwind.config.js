@@ -33,19 +33,19 @@ module.exports = {
       },
       animation: {
         'bounce': 'bounce 3s linear 0s infinite alternate',
+        'stickyanimation': 'stickyanimation .5s linear',
       },
+      
       keyframes: {
         bounce: {
           '0%, 100%': { transform: 'translateY(0px)' },
           '50%': { transform: 'translateY(-10px)' },
-        }
+        },
+        stickyanimation: {
+          '0%': { top: '-100px' },
+          '100%': { top: '0px' },
+        },
       }
-      // keyframes: {
-      //   wiggle: {
-      //     '0%, 100%': { transform: 'rotate(-3deg)' },
-      //     '50%': { transform: 'rotate(3deg)' },
-      //   }
-      // }
     },
   },
   plugins: [],

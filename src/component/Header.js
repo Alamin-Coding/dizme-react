@@ -1,20 +1,45 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { FaBars } from 'react-icons/fa';
 
 const Header = () => {
+    // Sticky Menu on scrolling start
+    const [sticky, setSticky] = useState(false);
+    const handleStickyNavbar = ()=> {
+        if (window.scrollY >= 100) {
+            setSticky(true);
+        } else {
+            setSticky(false);
+            setMobileMenu(false);
+        }
+    }
+    window.addEventListener("scroll",handleStickyNavbar);
+    //Sticky Menu End
+
+    //Mobile menu start
+    const [mobileMenu, setMobileMenu] = useState(false);
+    const handleMobileMenu = (e)=> {
+        console.log(e);
+        if (!mobileMenu) {
+            setMobileMenu(true);
+        } else {
+            setMobileMenu(false);
+        }
+    }
+    //Mobile menu end
+
   return (
-    <nav className='bg-dark-bg md:bg-transparent py-4 absolute top-0 left-2/4 -translate-x-2/4 w-full '>
+    <nav className={!sticky ? "bg-dark-bg md:bg-transparent py-4 absolute z-50 top-0 left-2/4 -translate-x-2/4 w-full" : "bg-dark-bg py-4 fixed z-50 top-0 left-2/4 -translate-x-2/4 w-full animate-stickyanimation"}>
         <div className="container">
             <div className="grid md:grid-cols-[auto_1fr] grid-cols-[auto_1fr] items-center justify-items-stretch">
                 <div className="logo w-40">
                     <img className='max-w-full' src="./images/dark-logo.png" alt="Dark-logo" />
                 </div>
                 <div className='flex justify-end md:hidden'>
-                    <FaBars className='text-white text-3xl cursor-pointer' />
+                    <FaBars className='text-white text-3xl cursor-pointer' onClick={handleMobileMenu} />
                 </div>
-                <div className="menu ">
-                    <ul className='md:items-center justify-end gap-4 flex flex-col md:flex-row pt-5 md:pt-0 pl-3 md:pl-0 '>
+                <div className={mobileMenu ? "block" : "hidden" }>
+                    <ul className="md:items-center justify-end gap-4 flex flex-col md:flex-row pt-5 md:pt-0 pl-3 md:pl-0">
                         <li>
                             <Link className='text-primary text-base font-jost font-medium hover:text-primary transition-all ' to="/">Home</Link>
                         </li>

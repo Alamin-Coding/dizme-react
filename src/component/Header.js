@@ -29,10 +29,10 @@ const Header = () => {
     //Mobile menu end
 
   return (
-    <nav className={!sticky ? "bg-dark-bg md:bg-transparent py-4 absolute z-50 top-0 left-2/4 -translate-x-2/4 w-full" : "bg-dark-bg py-4 fixed z-50 top-0 left-2/4 -translate-x-2/4 w-full animate-stickyanimation"}>
+    <nav className={!sticky ? "bg-dark-bg md:bg-transparent py-2 sm:py-4 absolute z-50 top-0 left-2/4 -translate-x-2/4 w-full" : "bg-dark-bg py-2 sm:py-4 fixed z-50 top-0 left-2/4 -translate-x-2/4 w-full animate-stickyanimation"}>
         <div className="container">
             <div className="grid md:grid-cols-[auto_1fr] grid-cols-[auto_1fr] items-center justify-items-stretch">
-                <div className="logo w-40">
+                <div className="logo w-32 sm:w-40">
                     <img className='max-w-full' src="./images/dark-logo.png" alt="Dark-logo" />
                 </div>
                 <div className='flex justify-end md:hidden'>

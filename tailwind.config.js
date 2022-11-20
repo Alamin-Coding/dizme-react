@@ -8,7 +8,7 @@ module.exports = {
         DEFAULT: '.5rem',
         xs: '.5rem',
         sm: '1rem',
-        md: '1.5rem',
+        md: '1rem',
       },
     },
     screens: {
@@ -23,9 +23,13 @@ module.exports = {
       'open': ['Open Sans', 'sans-serif',]
     },
     extend: {
+      padding: {
+        '90': '90px',
+      },
       colors: {
         'dark-bg': '#2B2D33',
         'primary': '#f75023',
+        'para': '#b9b5c9',
       },
       backgroundImage: {
         'banner': "url('/public/images/banner-bg.jpg')",
